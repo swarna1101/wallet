@@ -1,6 +1,7 @@
 {
-  "name": "@rapidfire/id",
-  "version": "0.0.93",
+  "name": "taiko-ecosystem-wallet",
+  "version": "0.1.2",
+  "description": "Taiko Ecosystem Wallet SDK",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -13,22 +14,36 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "npm run build",
     "test": "jest",
-    "prepublishOnly": "npm run build"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
-  "keywords": [],
-  "author": "Openfort (https://www.openfort.xyz)",
+  "keywords": [
+    "taiko",
+    "wallet",
+    "sdk",
+    "ethereum",
+    "web3"
+  ],
+  "author": "Taiko Labs",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
     "tsup": "^7.1.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.12"
   },
   "dependencies": {
-    "@openfort/ecosystem-js": "^0.1.26"
+    "@openfort/ecosystem-js": "0.1.8",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.11.1"
   },
   "files": [
-    "dist",
-    "README.md"
-  ],
-  "packageManager": "yarn@1.22.17"
+    "dist"
+  ]
 }
